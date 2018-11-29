@@ -1,0 +1,34 @@
+page-login {
+    ion-input {
+        input {
+          text-align: center;
+          /* IF YOU ALSO WANT TO PUSH PLACHEHOLDER TO THE RIGHT USE THE FOLLOWING, IF NOT JUST DELETE THE ::-webkit-input-placeholder*/
+          ::-webkit-input-placeholder {
+            text-align: center;
+          }
+        }
+      }
+
+    .logo,
+    .view-login {
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+    
+    .logo {
+        background-image: url('../../assets/imgs/login/logo-login.png');
+        background-size: 100%;
+        min-height: 18em;
+    }
+
+    .view-login {
+        background-image: url('../../assets/imgs/login/back-login.jpg');
+        background-size: 100% 100%;
+    }
+
+    // .item.item-input {
+    //     background-color: transparent;
+    // }
+    
+}
