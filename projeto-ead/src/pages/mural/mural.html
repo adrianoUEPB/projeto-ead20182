@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mural</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let mural of muralLista">
+    <ion-card-header>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src={{professor.icone}}>
+        </ion-avatar>
+        <h2>{{professor.nome}}</h2>
+        <h3>{{mural.data}}</h3>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <div padding>
+        {{mural.descricao}}
+      </div>
+      <div padding>
+        Segue em anexos as ultimas aulas.
+      </div>
+      <div padding>
+        <ion-icon name="attach"></ion-icon>
+        {{countMural(mural.id_mural)}} anexos
+      </div>
+      <ion-item-divider color="light">
+        <b>Adicionar comentário</b>
+      </ion-item-divider>
+
+        
+    </ion-card-content>
+  </ion-card>
+</ion-content>

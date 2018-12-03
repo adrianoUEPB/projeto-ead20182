@@ -3,8 +3,12 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { TurmasPage } from '../pages/turmas/turmas';
+import { AgendaPage } from '../pages/agenda/agenda';
+import { NotificacoesPage } from '../pages/notificacoes/notificacoes';
+import { TarefasPage } from '../pages/tarefas/tarefas';
+import { ConfiguracoesPage } from '../pages/configuracoes/configuracoes';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +16,21 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Turmas', icon: 'home', component: TurmasPage},
+      { title: 'Agenda', icon: 'calendar', component: AgendaPage},
+      { title: 'Notificações', icon: 'notifications', component: NotificacoesPage},
+      { title: 'Tarefas', icon: 'clipboard', component: TarefasPage},
+      { title: 'Configurações', icon: 'cog', component: ConfiguracoesPage},
+      { title: 'Sair', icon: 'exit', component: LoginPage}
     ];
 
   }
