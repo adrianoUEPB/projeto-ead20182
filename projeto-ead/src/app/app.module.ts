@@ -17,6 +17,14 @@ import { AtividadesPage } from '../pages/atividades/atividades';
 import { ForumPage } from '../pages/forum/forum';
 import { PessoasPage } from '../pages/pessoas/pessoas';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginService } from '../services/login.service';
+
+import { CalendarModule } from 'ionic3-calendar-neo-ptbr';
+import { TurmaService } from '../services/turma.service';
+import { ProfessorService } from '../services/professor.service';
+import { AtividadeService } from '../services/atividade.service';
+import { AnexoService } from '../services/anexo.service';
+import { MuralService } from '../services/mural.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     TabsPage
   ],
   imports: [
+    CalendarModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -55,6 +64,12 @@ import { TabsPage } from '../pages/tabs/tabs';
   providers: [
     StatusBar,
     SplashScreen,
+    TurmaService,
+    ProfessorService,
+    AtividadeService,
+    AnexoService,
+    MuralService,
+    LoginService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

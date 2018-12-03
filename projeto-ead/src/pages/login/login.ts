@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { TurmasPage } from '../turmas/turmas';
+import { Usuario } from '../../model/usuario.model';
+import { LoginService } from '../../services/login.service';
 
 /**
  * Generated class for the LoginPage page.
@@ -14,9 +16,20 @@ import { TurmasPage } from '../turmas/turmas';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  usuario: string;
+  senha: string;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public loginService: LoginService,
+    private alert: AlertController
+  ) { }
+
+  ngOnInit() {
+
   }
 
   ionViewDidLoad() {
@@ -24,7 +37,36 @@ export class LoginPage {
   }
 
   openPage() {
-    this.navCtrl.push(TurmasPage);
+
+    let user: Usuario = {
+      login: this.usuario,
+      senha: this.senha
+    }
+
+    if(this.usuario === '') {
+      let alert = this.alert.create({
+        title: 'Erro de login',
+        subTitle: 'Preencha o nome do usuário',
+        buttons: ['Ok']
+      });
+      alert.present();
+    } else if(this.senha === '') {
+      let alert = this.alert.create({
+        title: 'Erro de login',
+        subTitle: 'Preencha a senha do usuário',
+        buttons: ['Ok']
+      });
+      alert.present();
+    } else if(this.loginService.verifyLoginAcess(user)) {
+      this.navCtrl.push(TurmasPage);
+    } else {
+      let alert = this.alert.create({
+        title: 'Erro de login',
+        subTitle: 'Usuário ou senha incorretos',
+        buttons: ['Ok']
+      });
+      alert.present();
+    }
   }
 
 }

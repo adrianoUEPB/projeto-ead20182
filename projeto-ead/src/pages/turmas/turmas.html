@@ -9,58 +9,16 @@
 
 <ion-content>
 
-  <ion-card (click)="openPage()">
+  <ion-card *ngFor="let turma of turmas" (click)="openPage(turma.professor)">
     <ion-card-header>
-      <h1>Introdução a Força</h1>
+      <h1>{{ turma.disciplina }}</h1>
     </ion-card-header>
     <ion-card-content>
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/imgs/obi-wan.jpg">
+            <img src={{turma.professor.icone}}>
           </ion-avatar>
-          <h2>Obi-Wan</h2>
-        </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card (click)="openPage()">
-    <ion-card-header>
-      <h1>Mestre Jedi</h1>
-    </ion-card-header>
-    <ion-card-content>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/imgs/mestre-yoda.jpg">
-          </ion-avatar>
-          <h2>Mestre Yoda</h2>
-        </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card (click)="openPage()">
-    <ion-card-header>
-      <h1>Pilotagem I</h1>
-    </ion-card-header>
-    <ion-card-content>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/imgs/han-solo.jpg">
-          </ion-avatar>
-          <h2>Han Solo</h2>
-        </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card (click)="openPage()">
-    <ion-card-header>
-     <h1>Lado Negro da Força</h1>
-    </ion-card-header>
-    <ion-card-content>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/imgs/darth-vader.jpg">
-          </ion-avatar>
-          <h2>Darth Vader</h2>
+          <h2>{{ turma.professor.nome }}</h2>
         </ion-item>
     </ion-card-content>
   </ion-card>

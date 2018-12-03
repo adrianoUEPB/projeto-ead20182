@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-agenda',
@@ -7,8 +6,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AgendaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  
+  currentEvents: any[] = []
+
+  constructor(
+    
+  ) {
+    this.currentEvents =  [
+      {
+       year: 2018,
+       month: 12,
+       date: 25,
+       description: 'description',
+      }
+    ]
   }
 
 }
