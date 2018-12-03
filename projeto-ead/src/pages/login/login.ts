@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
       });
       alert.present();
     } else if(this.loginService.verifyLoginAcess(user)) {
-      this.navCtrl.push(TurmasPage);
+      this.navCtrl.setRoot(TurmasPage);
     } else {
       let alert = this.alert.create({
         title: 'Erro de login',

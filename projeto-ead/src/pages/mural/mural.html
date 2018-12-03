@@ -25,13 +25,13 @@
       <div padding>
         Segue em anexos as ultimas aulas.
       </div>
-      <div padding>
+      <div (click)="openAnexos(mural)" padding>
         <ion-icon name="attach"></ion-icon>
         {{countMural(mural.id_mural)}} anexos
       </div>
-      <ion-item-divider color="light">
+      <!-- <ion-item-divider color="light">
         <b>Adicionar comentário</b>
-      </ion-item-divider>
+      </ion-item-divider> -->
 
         
     </ion-card-content>
