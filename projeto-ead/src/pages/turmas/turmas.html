@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Turmas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let turma of turmas" (click)="openPage(turma.professor)">
+    <ion-card-header>
+      <h1>{{ turma.disciplina }}</h1>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src={{turma.professor.icone}}>
+          </ion-avatar>
+          <h2>{{ turma.professor.nome }}</h2>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

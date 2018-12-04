@@ -1,0 +1,28 @@
+<ion-content class="view-login">
+  
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-list>
+        <div class="logo"></div>
+        <ion-row>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="usuario" center placeholder="Usuário"></ion-input>
+          </ion-item>
+        </ion-row>
+        
+        <ion-row style="margin-top: 4rem">
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="senha" placeholder="Senha"></ion-input>
+          </ion-item>
+        </ion-row>
+      
+      </ion-list>
+    </ion-row>
+    <ion-row>
+      <div padding style="margin:0 auto; width:262px">
+        <button style="height: 48px;" ion-button full (click)="openPage()">Entrar</button>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
