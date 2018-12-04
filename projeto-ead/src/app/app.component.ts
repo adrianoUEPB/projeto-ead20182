@@ -9,6 +9,7 @@ import { NotificacoesPage } from '../pages/notificacoes/notificacoes';
 import { TarefasPage } from '../pages/tarefas/tarefas';
 import { ConfiguracoesPage } from '../pages/configuracoes/configuracoes';
 import { LoginPage } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
@@ -47,6 +48,6 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
   }
 }

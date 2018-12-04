@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { TurmasPage } from '../turmas/turmas';
 import { Usuario } from '../../model/usuario.model';
 import { LoginService } from '../../services/login.service';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -11,7 +11,6 @@ import { LoginService } from '../../services/login.service';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -58,7 +57,7 @@ export class LoginPage implements OnInit {
       });
       alert.present();
     } else if(this.loginService.verifyLoginAcess(user)) {
-      this.navCtrl.setRoot(TurmasPage);
+      this.navCtrl.setRoot(TabsPage);
     } else {
       let alert = this.alert.create({
         title: 'Erro de login',

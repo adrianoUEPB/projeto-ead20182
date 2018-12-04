@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { MuralPage } from '../mural/mural';
 import { AtividadesPage } from '../atividades/atividades';
 import { ForumPage } from '../forum/forum';
 import { PessoasPage } from '../pessoas/pessoas';
+import { TurmasPage } from '../turmas/turmas';
 
 @Component({
   selector: 'page-tabs',
@@ -11,7 +11,7 @@ import { PessoasPage } from '../pessoas/pessoas';
 })
 export class TabsPage {
 
-  muralRoot = MuralPage;
+  turmaRoot = TurmasPage;
   atividadesRoot = AtividadesPage;
   forumRoot = ForumPage;
   pessoasRoot = PessoasPage;
